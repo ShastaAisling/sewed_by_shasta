@@ -1,0 +1,7 @@
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" <%=image_tag(past_project.past_project_photo.first.path)%>
+  <div class="card-body">
+    <h5 class="card-title"><%= past_project.title %></h5>
+    <a href="/past_projects/<%=past_project.id%>" class="btn btn-dark">See more</a>
+  </div>
+</div>

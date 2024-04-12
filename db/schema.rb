@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_10_143639) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_12_151737) do
+  create_table "past_project_photos", force: :cascade do |t|
+    t.string "title"
+    t.string "path"
+    t.integer "past_project_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["past_project_id"], name: "index_past_project_photos_on_past_project_id"
+  end
+
   create_table "past_projects", force: :cascade do |t|
     t.string "title"
-    t.string "image_path"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "past_project_photos", "past_projects"
 end

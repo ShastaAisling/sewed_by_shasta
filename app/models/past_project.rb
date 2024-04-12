@@ -1,5 +1,3 @@
 class PastProject < ApplicationRecord
-    def get_photo
-        return image_path
-    end
+    has_many :past_project_photo
 end

@@ -1,8 +1,15 @@
 
-<div class="card text-center" style="width: 250px"> 
-  <div class="card-body"> 
-    <h1 class="display-3"><%= @past_project.title %></h1>
-    <img class="img-fluid" <%=image_tag(@past_project.image_path)%>
-    <p><%= @past_project.description%></p>
+<div class="container" style="margin: 5%">
+  <h1 class="display-5"><%= @past_project.title %></h1>
+  <p class="lead"><%= @past_project.description %></p>
+  <hr class="my-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <%= render partial: "shared/past_project_photo_carousel" %>
+      </div>
+      <div class="col-sm">
+      </div>
+    </div>
   </div>
 </div>
